@@ -25,9 +25,8 @@
  */
 void main() {
     // configure ztimer
-    const uint32_t period = 1000;
+    const uint32_t period = 3000;
     zTimerSet(period);
-    zTimerOn();
     
     while(1) {
         door = readDoor();

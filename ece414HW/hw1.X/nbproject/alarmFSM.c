@@ -3,6 +3,7 @@
 #include "alarmFSM.h"
 #include "alarm_intf.h"
 #include "warnFSM.h"
+#include "ztimer.h"
 
 enum FSM_States {OFF, WAIT_30, ALARM}
 FSM_State;
@@ -34,6 +35,7 @@ void alarmFSM() {
         case WAIT_30:
             // mealy SM: all outputs go in transitions
             // state logic
+            zTimerOn();
             if (timeFlag == 0x01 && door == 0x01) {
                 alarmOn();
                 warn = 0x01;
@@ -50,6 +52,7 @@ void alarmFSM() {
             break;
             
         case ALARM:
+            zTimerOff();
             // mealy SM: all outputs go in transitions
             // state logic
             if (door == 0x01) {
