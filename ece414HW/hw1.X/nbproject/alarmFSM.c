@@ -12,7 +12,7 @@ FSM_State;
 uint8_t door;
 uint8_t timeFlag;
 
-void warn_init() {
+void alarm_init() {
     FSM_State = OFF;
     warn = 0;
 }

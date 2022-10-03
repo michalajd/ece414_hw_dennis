@@ -6,7 +6,6 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <xc.h>
 #include <inttypes.h>
 #include "ztimer.h"
@@ -25,7 +24,9 @@
  */
 void main() {
     // configure ztimer
-    const uint32_t period = 3000;
+    alarm_init();
+    warn_init();
+    const uint32_t period = 30000;
     zTimerSet(period);
     
     while(1) {
