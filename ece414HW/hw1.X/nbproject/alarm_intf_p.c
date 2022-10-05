@@ -1,4 +1,4 @@
-/*#define _SUPPRESS_PLIB_WARNING 1 // to not throw warnings
+#define _SUPPRESS_PLIB_WARNING 1 // to not throw warnings
 #include <xc.h>
 #include <inttypes.h>
 #include <plib.h>
@@ -35,4 +35,4 @@ void alarmOff(){
 void alarmOn(){
     // Assert the output of the alarm (pin 25, RB14) to be on
     PORTWrite(IOPORT_B, BIT_14) = 1;
-} */
+} 
